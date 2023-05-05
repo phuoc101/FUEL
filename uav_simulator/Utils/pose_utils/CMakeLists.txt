@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(pose_utils)
 
+set(CMAKE_CXX_COMPILER "/usr/bin/g++-7")
+set(CMAKE_C_COMPILER "/usr/bin/gcc-7")
 find_package(catkin REQUIRED COMPONENTS
   #armadillo
   roscpp

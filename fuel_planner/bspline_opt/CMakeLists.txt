@@ -1,9 +1,13 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(bspline_opt)
 
+set(CMAKE_CXX_COMPILER "/usr/bin/g++-7")
+set(CMAKE_C_COMPILER "/usr/bin/gcc-7")
 set(CMAKE_BUILD_TYPE "Release")
-set(CMAKE_CXX_FLAGS "-std=c++11")
-set(CMAKE_CXX_FLAGS_RELEASE "-O3 -Wall")
+set(CMAKE_CXX_FLAGS "-std=c++14")
+set(CMAKE_CXX_FLAGS_RELEASE "-O2 -Wall")
+
+set(nlopt_DIR "/usr/local/lib/cmake/nlopt/")
 
 find_package(Eigen3 REQUIRED)
 find_package(PCL 1.7 REQUIRED)
@@ -16,7 +20,7 @@ find_package(catkin REQUIRED COMPONENTS
   plan_env
   active_perception
   cv_bridge
-  nlopt
+  # nlopt
 )
 
 catkin_package(
@@ -32,6 +36,7 @@ include_directories(
     ${catkin_INCLUDE_DIRS}
     ${Eigen3_INCLUDE_DIRS} 
     ${PCL_INCLUDE_DIRS}
+   "/usr/local/lib/cmake/nlopt/" 
 )
 
 add_library( bspline_opt 
@@ -39,5 +44,5 @@ add_library( bspline_opt
     )
 target_link_libraries( bspline_opt
     ${catkin_LIBRARIES} 
-    # /usr/local/lib/libnlopt.so
+    /usr/local/lib/libnlopt.so
     )  

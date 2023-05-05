@@ -57,7 +57,7 @@ void clickCallback(const geometry_msgs::PoseStamped& msg) {
   }
 
   map_cloud_.width = map_cloud_.points.size();
-  map_cloud_.height = 1;
+  map_cloud_.height = 5;
   map_cloud_.is_dense = true;
   pcl::toROSMsg(map_cloud_, map_msg_);
   map_msg_.header.frame_id = "world";

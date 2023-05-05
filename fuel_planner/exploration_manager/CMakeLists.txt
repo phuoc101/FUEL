@@ -1,12 +1,15 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(exploration_manager)
 
+set(CMAKE_CXX_COMPILER "/usr/bin/g++-7")
+set(CMAKE_C_COMPILER "/usr/bin/gcc-7")
+set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_BUILD_TYPE "Release")
-set(CMAKE_CXX_FLAGS "-std=c++11")
+set(CMAKE_CXX_FLAGS "-std=c++14")
 set(CMAKE_CXX_FLAGS_RELEASE "-O3 -Wall")
 
 find_package(Eigen3 REQUIRED)
-find_package(PCL 1.7 REQUIRED)
+find_package(PCL 1.10 REQUIRED)
 
 find_package(catkin REQUIRED COMPONENTS
   roscpp
